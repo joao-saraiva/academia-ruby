@@ -1,0 +1,7 @@
+.error{
+    color: red;
+}
+
+.optional, .required{
+    display: block;
+}
