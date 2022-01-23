@@ -33,6 +33,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'simple_form', '~> 5.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'net-smtp'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,6 +60,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
