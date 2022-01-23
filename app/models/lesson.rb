@@ -11,7 +11,7 @@ class Lesson < ApplicationRecord
     after_create :create_doubt
 
     def create_doubt
-        LessonDoubt.create(lesson_id: self.id)
+        doubt = LessonDoubt.create(lesson_id: self.id)
     end
 
     def content_formated_to_html 
