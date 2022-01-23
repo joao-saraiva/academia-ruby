@@ -11,7 +11,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   #POST /resource
   def create
-    super
+    user = User.new(sign_up_params)
+
+    if user.save
+      redirect_to root_path
+    else 
+      render :new
+    end
   end
 
   #GET /resource/edit
@@ -62,5 +68,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #the path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
     super(resource)
+  end
+
+  def sign_up_params
+    params.require(:user).permit(:cpf, :email, :password, :password_confirmation)
   end
 end
