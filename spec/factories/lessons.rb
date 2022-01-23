@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :lesson do
-    name { "MyString" }
+    name { "Lesson-1" }
     content { "MyText" }
   end
 end
