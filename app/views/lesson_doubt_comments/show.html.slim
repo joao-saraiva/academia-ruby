@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Doubt:
+  = @lesson_doubt_comment.doubt_id
+
+p
+  strong User:
+  = @lesson_doubt_comment.user_id
+
+p
+  strong Doubt text:
+  = @lesson_doubt_comment.doubt_text
+
+p
+  strong Answered:
+  = @lesson_doubt_comment.answered
+
+=> link_to 'Edit', edit_lesson_doubt_comment_path(@lesson_doubt_comment)
+'|
+=< link_to 'Back', lesson_doubt_comments_path

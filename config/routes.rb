@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lesson_doubt_comments
   resources :lesson_doubts
   resources :lessons_started_by_user
   resources :lessons

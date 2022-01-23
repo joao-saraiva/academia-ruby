@@ -1,0 +1,27 @@
+h1 Listing lesson_doubt_comments
+
+table
+  thead
+    tr
+      th Doubt
+      th User
+      th Doubt text
+      th Answered
+      th
+      th
+      th
+
+  tbody
+    - @lesson_doubt_comments.each do |lesson_doubt_comment|
+      tr
+        td = lesson_doubt_comment.doubt_id
+        td = lesson_doubt_comment.user_id
+        td = lesson_doubt_comment.doubt_text
+        td = lesson_doubt_comment.answered
+        td = link_to 'Show', lesson_doubt_comment
+        td = link_to 'Edit', edit_lesson_doubt_comment_path(lesson_doubt_comment)
+        td = link_to 'Destroy', lesson_doubt_comment, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Lesson doubt comment', new_lesson_doubt_comment_path

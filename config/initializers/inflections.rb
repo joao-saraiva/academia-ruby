@@ -15,5 +15,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     inflect.irregular('LessonDoubt', 'LessonDoubts')
     inflect.irregular('lesson_doubt', 'lesson_doubts')
 
-    #inflect.irregular('LessonDoubtComment',)
+    inflect.irregular('LessonDoubtComment', 'LessonDoubtComments')
+    inflect.irregular('lesson_doubt_comment', 'lesson_doubt_comments')
 end
