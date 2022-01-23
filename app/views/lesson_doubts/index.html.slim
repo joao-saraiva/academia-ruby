@@ -13,9 +13,6 @@ table
       tr
         td = lesson_doubt.class_id
         td = link_to 'Show', lesson_doubt
-        td = link_to 'Edit', edit_lesson_doubt_path(lesson_doubt)
         td = link_to 'Destroy', lesson_doubt, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Lesson doubt', new_lesson_doubt_path

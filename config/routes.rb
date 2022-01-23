@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :lesson_doubt_comments
   resources :lesson_doubts, except: [:edit, :destroy, :create, :update, :new, :index]
-  resources :lessons_started_by_user
   resources :lessons, except: [:edit, :destroy, :create, :update, :new]
   devise_for :users, controllers: {
       sessions: "users/sessions", registrations: 'users/registrations' 

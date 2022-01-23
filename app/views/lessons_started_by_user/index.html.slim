@@ -17,9 +17,6 @@ table
         td = lesson_started_by_user.lesson_id
         td = lesson_started_by_user.completed
         td = link_to 'Show', lesson_started_by_user
-        td = link_to 'Edit', edit_lesson_started_by_user_path(lesson_started_by_user)
         td = link_to 'Destroy', lesson_started_by_user, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Lesson started by user', new_lesson_started_by_user_path
