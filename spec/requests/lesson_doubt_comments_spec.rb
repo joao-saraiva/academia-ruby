@@ -17,11 +17,11 @@ RSpec.describe "/lesson_doubt_comments", type: :request do
   # LessonDoubtComment. As you add validations to LessonDoubtComment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryBot.attributes_for(:lesson_doubt_comment)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { user_id: nil }
   }
 
   describe "GET /index" do
@@ -78,7 +78,7 @@ RSpec.describe "/lesson_doubt_comments", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post lesson_doubt_comments_url, params: { lesson_doubt_comment: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).to render_template(:new)
       end
     end
   end
@@ -86,14 +86,14 @@ RSpec.describe "/lesson_doubt_comments", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { doubt_text: 'yaay i got my answer'}
       }
 
       it "updates the requested lesson_doubt_comment" do
         lesson_doubt_comment = LessonDoubtComment.create! valid_attributes
         patch lesson_doubt_comment_url(lesson_doubt_comment), params: { lesson_doubt_comment: new_attributes }
         lesson_doubt_comment.reload
-        skip("Add assertions for updated state")
+        expect(lesson_doubt_comment.doubt_text).to eq new_attributes[:doubt_text]
       end
 
       it "redirects to the lesson_doubt_comment" do
@@ -108,7 +108,7 @@ RSpec.describe "/lesson_doubt_comments", type: :request do
       it "renders a successful response (i.e. to display the 'edit' template)" do
         lesson_doubt_comment = LessonDoubtComment.create! valid_attributes
         patch lesson_doubt_comment_url(lesson_doubt_comment), params: { lesson_doubt_comment: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).to render_template(:edit)
       end
     end
   end
