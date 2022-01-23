@@ -8,6 +8,13 @@ class Lesson < ApplicationRecord
     has_many :users, through: :lesson_started_by_user, class_name: 'User'
     has_many :comments, through: :doubt, class_name: 'LessonDoubtComment'
 
-    
+    after_create :create_doubt
 
+    def create_doubt
+        LessonDoubt.create(lesson_id: self.id)
+    end
+
+    def content_formated_to_html 
+        "<p>#{content}</p>".html_safe
+    end
 end
