@@ -40,7 +40,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
   gem 'awesome_print', '~> 1.9', '>= 1.9.2'
-  gem 'factory_bot', '~> 6.2'
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
@@ -62,6 +62,8 @@ group :test do
   gem 'webdrivers'
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'database_cleaner', '~> 1.5'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
