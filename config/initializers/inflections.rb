@@ -11,4 +11,9 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
     inflect.irregular('LessonStartedByUser', 'LessonsStartedByUser')
     inflect.irregular('lesson_started_by_user', 'lessons_started_by_user')
+
+    inflect.irregular('LessonDoubt', 'LessonDoubts')
+    inflect.irregular('lesson_doubt', 'lesson_doubts')
+
+    #inflect.irregular('LessonDoubtComment',)
 end
