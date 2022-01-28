@@ -12,7 +12,7 @@ class LessonDoubtsController < ApplicationController
 
   # GET /lesson_doubts/new
   def new
-    @lesson_doubt = LessonDoubt.new
+    @lesson_doubt = LessonDoubt.new(lesson_id: params[:lesson_id])
   end
 
   # GET /lesson_doubts/1/edit
@@ -65,6 +65,6 @@ class LessonDoubtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lesson_doubt_params
-      params.require(:lesson_doubt).permit(:class_id)
+      params.require(:lesson_doubt).permit(:lesson_id, :name, :description)
     end
 end

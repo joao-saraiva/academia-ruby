@@ -1,12 +1,12 @@
-= form_for @lesson_doubt do |f|
-  - if @lesson_doubt.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@lesson_doubt.errors.count, 'error')} prohibited this lesson_doubt from being saved:"
-      ul
-        - @lesson_doubt.errors.full_messages.each do |message|
-          li = message
+= simple_form_for(@lesson_doubt)  do |f|
+  h1
+    'Create a doubt to
+    = @lesson_doubt.lesson.name
+  .form-inputs
+    = f.input :lesson_id, as: :hidden, input_html: { value: "#{@lesson_doubt.lesson_id}"}
+    = f.input :name
+    = f.input :description, label: 'Describe your doubt', input_html: {style: 'resize: none; width: 50%; height: 150px;'}
+  .form-actions
+    =< link_to 'Back to lesson', lesson_path(@lesson_doubt.lesson)
+    = f.submit 'Create'
 
-  .field
-    = f.label :class_id
-    = f.text_field :class_id
-  .actions = f.submit

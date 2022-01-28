@@ -1,8 +1,16 @@
 p#notice = notice
 
 p
-  strong Class:
-  = @lesson_doubt.class_id
+  strong Lesson:
+  = @lesson_doubt.lesson.name
+
+p
+  strong Doubt:
+  = @lesson_doubt.name
+
+p 
+  strong Description: 
+  = @lesson_doubt.description
 
 
-=< link_to 'Back', lesson_doubts_path
+=< link_to 'Back to lesson', lesson_path(@lesson_doubt.lesson)
