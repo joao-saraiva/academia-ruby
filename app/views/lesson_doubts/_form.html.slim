@@ -4,6 +4,7 @@
     = @lesson_doubt.lesson.name
   .form-inputs
     = f.input :lesson_id, as: :hidden, input_html: { value: "#{@lesson_doubt.lesson_id}"}
+
     = f.input :name
     = f.input :description, label: 'Describe your doubt', input_html: {style: 'resize: none; width: 50%; height: 150px;'}
   .form-actions

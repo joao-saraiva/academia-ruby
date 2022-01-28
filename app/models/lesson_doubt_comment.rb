@@ -5,6 +5,8 @@ class LessonDoubtComment < ApplicationRecord
 
     before_create :set_answered_to_false
 
+    validates_presence_of :doubt_text
+
     def set_answered_to_false
         self.answered = false
     end

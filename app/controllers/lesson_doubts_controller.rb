@@ -8,6 +8,7 @@ class LessonDoubtsController < ApplicationController
 
   # GET /lesson_doubts/1 or /lesson_doubts/1.json
   def show
+    @comment = LessonDoubtComment.new(doubt_id: @lesson_doubt.id)
   end
 
   # GET /lesson_doubts/new
@@ -57,6 +58,17 @@ class LessonDoubtsController < ApplicationController
     end
   end
 
+  def post_comment
+    comment = LessonDoubtComment.new(lesson_doubt_comment_params)
+    @lesson_doubt = comment.doubt
+    if comment.save
+      redirect_to lesson_doubt_url(@lesson_doubt), notice: "Comment was successfully posted."
+    else
+      @comment = comment
+      render :show
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson_doubt
@@ -66,5 +78,9 @@ class LessonDoubtsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def lesson_doubt_params
       params.require(:lesson_doubt).permit(:lesson_id, :name, :description)
+    end
+
+    def lesson_doubt_comment_params
+      params.require(:lesson_doubt_comment).permit(:doubt_id, :user_id, :doubt_text, :answered)
     end
 end

@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   end
 
   get '/lesson_doubts/create_doubt_by_lesson/:lesson_id', to: 'lesson_doubts#new', as: 'new_doubt_by_lesson'
+  post 'lesson_doubt_comments/post_comment/', to: 'lesson_doubts#post_comment', as: 'post_comment'
+
 end
