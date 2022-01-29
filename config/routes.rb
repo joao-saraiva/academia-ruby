@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   resources :lesson_doubt_comments
   resources :lesson_doubts
   resources :lessons, except: [:edit, :destroy, :create, :update, :new]
+  resources :homes, except: [ :new, :create, :destroy, :update, :edit, :show ]
   devise_for :users, controllers: {
       sessions: "users/sessions", registrations: 'users/registrations' 
     }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_scope :user do
-    root to: "users/sessions#new"
+    get '/users/sign_out' => 'devise/sessions#destroy'
+    root to: "home#index"
   end
 
   get '/lesson_doubts/create_doubt_by_lesson/:lesson_id', to: 'lesson_doubts#new', as: 'new_doubt_by_lesson'
