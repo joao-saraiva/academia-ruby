@@ -910,6 +910,11 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"
   integrity sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==
 
+"@icon/themify-icons@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@icon/themify-icons/-/themify-icons-1.0.1.tgz#b58581570cd9d3422fcc36e2c435da57df2d4110"
+  integrity sha512-CumEdkaflrLkpXofDHx6ZsXhDgf5UjoGnyhkRgJP6U5Bmr1WEPcZFTmt1Vb9d1e7mYVeZVk4g033ja+OLRfE4A==
+
 "@npmcli/fs@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@npmcli/fs/-/fs-1.1.0.tgz#bec1d1b89c170d40e1b73ad6c943b0b75e7d2951"

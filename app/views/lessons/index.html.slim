@@ -4,19 +4,18 @@ table
   thead
     tr
       th Name
-      th Content
 
 
   tbody
     - @lessons.each do |lesson|
       tr
         td = lesson.name
-        td = lesson.content_formated_to_html
         td = link_to 'Show', lesson
         td = link_to 'Destroy', lesson, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
-
-a.genric-btn.danger. View More
 button.btn.text-uppercase Submit
+.genric-btn.danger.circle Danger
+
+.section-top-border.text-right 
+  h3.mb-30 Right
 

@@ -1768,7 +1768,11 @@ th {
   background: #f9f9fb;
   color: #222222;
   line-height: 30px;
-  border: 1px solid #dddddd; }
+  border: 1px solid #dddddd;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
   .view-more-btn:hover {
     color: #7c32ff; }
 
