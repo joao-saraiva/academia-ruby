@@ -34,6 +34,9 @@ gem 'simple_form', '~> 5.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'net-smtp'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'popper_js', '~> 2.9.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

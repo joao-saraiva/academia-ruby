@@ -11,4 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require popper
+//= require bootstrap
+//= require jquery.ajaxchimp.min
+//= require jquery.magnific-popup.min
+//= require parallax.min
+//= require owl.carousel.min
+//= require jquery.sticky
+//= require hexagons.min
+//= require jquery.counterup.min
+//= require waypoints.min
+//= require jquery.nice-select.min
+//= require main
 //= require activestorage
