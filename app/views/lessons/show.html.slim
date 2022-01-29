@@ -8,6 +8,9 @@ p
   strong Content:
   = @lesson.content_formated_to_html
 
+
+
+
 =< link_to 'Back', lessons_path()
 =< link_to 'List of Doubts', lesson_doubts_path()
 =< link_to 'New Doubt', new_doubt_by_lesson_path(@lesson)
