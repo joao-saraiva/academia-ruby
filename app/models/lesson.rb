@@ -7,13 +7,7 @@ class Lesson < ApplicationRecord
     has_many :doubts, class_name: 'LessonDoubt'
     has_many :comments, through: :doubt, class_name: 'LessonDoubtComment'
 
-    after_create :create_doubt
-
-    def create_doubt
-        doubt = LessonDoubt.create(lesson_id: self.id)
-    end
-
-    def content_formated_to_html 
-        "<p>#{content}</p>".html_safe
+    def content_formated_to_html
+        self.content.present? ? "<p>#{self.content}</p>".html_safe : false
     end
 end
