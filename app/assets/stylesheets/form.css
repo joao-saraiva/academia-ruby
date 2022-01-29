@@ -5,3 +5,7 @@
 .optional, .required{
     display: block;
 }
+
+.field_with_errors{
+    background-color: transparent;
+}

@@ -5,19 +5,14 @@ table
     tr
       th Name
       th Content
-      th
-      th
-      th
+
 
   tbody
     - @lessons.each do |lesson|
       tr
         td = lesson.name
-        td = lesson.content
+        td = lesson.content_formated_to_html
         td = link_to 'Show', lesson
-        td = link_to 'Edit', edit_lesson_path(lesson)
         td = link_to 'Destroy', lesson, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Lesson', new_lesson_path

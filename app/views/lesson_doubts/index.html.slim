@@ -3,7 +3,8 @@ h1 Listing lesson_doubts
 table
   thead
     tr
-      th Class
+      th Lesson
+      th Created
       th
       th
       th
@@ -11,11 +12,9 @@ table
   tbody
     - @lesson_doubts.each do |lesson_doubt|
       tr
-        td = lesson_doubt.class_id
+        td = lesson_doubt.lesson.name
+        td = lesson_doubt.created_at.strftime("%d/%m/%Y")
         td = link_to 'Show', lesson_doubt
-        td = link_to 'Edit', edit_lesson_doubt_path(lesson_doubt)
         td = link_to 'Destroy', lesson_doubt, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Lesson doubt', new_lesson_doubt_path
