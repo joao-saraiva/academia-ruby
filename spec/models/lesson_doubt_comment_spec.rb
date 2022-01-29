@@ -5,6 +5,10 @@ RSpec.describe LessonDoubtComment, type: :model do
     it { is_expected.to belong_to(model) }
   end
 
+  [:doubt_text, :user_id, :doubt_id].each do |attribute|
+    it { is_expected.to validate_presence_of(attribute) }
+  end
+
   #after create methods
   describe '#set_answered_to_false' do 
     it 'should put answered to false' do 
