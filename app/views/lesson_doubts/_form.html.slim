@@ -1,0 +1,13 @@
+= simple_form_for(@lesson_doubt)  do |f|
+  h1
+    'Create a doubt to
+    = @lesson_doubt.lesson.name
+  .form-inputs
+    = f.input :lesson_id, as: :hidden, input_html: { value: "#{@lesson_doubt.lesson_id}"}
+
+    = f.input :name
+    = f.input :description, label: 'Describe your doubt', input_html: {style: 'resize: none; width: 50%; height: 150px;'}
+  .form-actions
+    =< link_to 'Back to lesson', lesson_path(@lesson_doubt.lesson)
+    = f.submit 'Create'
+

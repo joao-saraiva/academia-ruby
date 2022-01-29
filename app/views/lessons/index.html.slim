@@ -1,0 +1,18 @@
+h1 Listing lessons
+
+table
+  thead
+    tr
+      th Name
+      th Content
+
+
+  tbody
+    - @lessons.each do |lesson|
+      tr
+        td = lesson.name
+        td = lesson.content_formated_to_html
+        td = link_to 'Show', lesson
+        td = link_to 'Destroy', lesson, data: { confirm: 'Are you sure?' }, method: :delete
+
+br

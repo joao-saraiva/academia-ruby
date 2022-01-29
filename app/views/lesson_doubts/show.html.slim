@@ -1,0 +1,33 @@
+p#notice = notice
+
+p
+  strong Lesson:
+  = @lesson_doubt.lesson.name
+
+p
+  strong Doubt:
+  = @lesson_doubt.name
+
+p 
+  strong Description: 
+  = @lesson_doubt.description
+
+
+=< link_to 'Back to lesson', lesson_path(@lesson_doubt.lesson)
+
+= simple_form_for( @comment, url: post_comment_path() ) do |f|
+  .form-inputs
+    = f.input :doubt_id, as: :hidden, input_html: { value: "#{@lesson_doubt.id}"}
+    = f.input :user_id, as: :hidden, input_html: { value: "#{current_user.id}"}
+
+    = f.input :doubt_text, label: "Comment", input_html: {style: 'resize: none; width: 100%; height: 150px;'}
+
+  .form-action
+    = f.submit 'Send comment'
+
+- @lesson_doubt.comments.each do |comment|
+  p 
+    strong User: 
+    = comment.user.email
+  p
+    = comment.doubt_text

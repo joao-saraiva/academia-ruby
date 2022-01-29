@@ -1,0 +1,20 @@
+h1 Listing lesson_doubts
+
+table
+  thead
+    tr
+      th Lesson
+      th Created
+      th
+      th
+      th
+
+  tbody
+    - @lesson_doubts.each do |lesson_doubt|
+      tr
+        td = lesson_doubt.lesson.name
+        td = lesson_doubt.created_at.strftime("%d/%m/%Y")
+        td = link_to 'Show', lesson_doubt
+        td = link_to 'Destroy', lesson_doubt, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
