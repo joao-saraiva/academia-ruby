@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title
+      | AcademiaRuby
+    meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'form'
+  body style='background-image: linear-gradient(180deg, #053c5e, #c32530); height:80vh;'
+    = yield
+    = javascript_include_tag 'application'
