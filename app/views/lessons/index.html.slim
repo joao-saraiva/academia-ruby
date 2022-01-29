@@ -4,15 +4,26 @@ table
   thead
     tr
       th Name
-      th Content
 
 
   tbody
     - @lessons.each do |lesson|
       tr
         td = lesson.name
-        td = lesson.content_formated_to_html
         td = link_to 'Show', lesson
         td = link_to 'Destroy', lesson, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
+section.home-banner-area
+    .container
+      .row.justify-content-center.fullscreen.align-items-center
+        .col-lg-5.col-md-8.home-banner-left
+          h1.text-white
+            | Take the first step
+            br/
+            | to learn with us
+          p.mx-auto.text-white.mt-20.mb-40
+            | In the history of modern astronomy, there is probably no one
+            | greater leap forward than the building and launch of the space
+            | telescope known as the Hubble.
+        .offset-lg-2.col-lg-5.col-md-12.home-banner-right
+          img.img-fluid alt="" src="img/header-img.png" /
