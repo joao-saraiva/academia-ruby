@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
-
+  layout 'registration_layout'
   #GET /resource/sign_up
   def new
     super
@@ -11,13 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   #POST /resource
   def create
-    user = User.new(sign_up_params)
-
-    if user.save
-      redirect_to root_path
-    else 
-      render :new
-    end
+    super
   end
 
   #GET /resource/edit
