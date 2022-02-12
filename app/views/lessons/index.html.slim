@@ -1,29 +1,119 @@
-h1 Listing lessons
-
-table
-  thead
-    tr
-      th Name
-
-
-  tbody
-    - @lessons.each do |lesson|
-      tr
-        td = lesson.name
-        td = link_to 'Show', lesson
-        td = link_to 'Destroy', lesson, data: { confirm: 'Are you sure?' }, method: :delete
-
-section.home-banner-area
-    .container
-      .row.justify-content-center.fullscreen.align-items-center
-        .col-lg-5.col-md-8.home-banner-left
-          h1.text-white
-            | Take the first step
-            br/
-            | to learn with us
-          p.mx-auto.text-white.mt-20.mb-40
-            | In the history of modern astronomy, there is probably no one
-            | greater leap forward than the building and launch of the space
-            | telescope known as the Hubble.
-        .offset-lg-2.col-lg-5.col-md-12.home-banner-right
-          img.img-fluid alt="" src="img/header-img.png" /
+section.post-content-area style='margin-top: 150px'
+  .container
+    .row
+      .col-lg-8.posts-list
+        .single-post.row
+          .col-lg-3.col-md-3.meta-details
+            ul.tags
+              li
+                a href="#"  Food,
+              li
+                a href="#"  Technology,
+              li
+                a href="#"  Politics,
+              li
+                a href="#"  Lifestyle
+            .user-details.row
+              p.user-name.col-lg-12.col-md-12.col-6
+                a href="#"  Mark wiens
+                span.lnr.lnr-user
+              p.date.col-lg-12.col-md-12.col-6
+                a href="#"  12 Dec, 2017
+                span.lnr.lnr-calendar-full
+              p.view.col-lg-12.col-md-12.col-6
+                a href="#"  1.2M Views
+                span.lnr.lnr-eye
+              p.comments.col-lg-12.col-md-12.col-6
+                a href="#"  06 Comments
+                span.lnr.lnr-bubble
+          .col-lg-9.col-md-9
+            .feature-img
+              img.img-fluid alt="" src="img/blog/feature-img1.jpg" /
+            a.posts-title href="blog-single.html" 
+            h3 Astronomy Binoculars A Great Alternative
+            p.excert
+              | MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to
+              | spend money
+              | on boot camp when you can get the MCSE study materials yourself at a fraction.
+            a.view-more-btn href="blog-single.html"  View More
+        nav.blog-pagination.justify-content-center.d-flex
+          ul.pagination
+            li.page-item
+              a.page-link aria-label="Previous" href="#" 
+                span aria-hidden="true" 
+                  span.lnr.lnr-chevron-left
+            li.page-item
+              a.page-link href="#"  01
+            li.page-item.active
+              a.page-link href="#"  02
+            li.page-item
+              a.page-link href="#"  03
+            li.page-item
+              a.page-link href="#"  04
+            li.page-item
+              a.page-link href="#"  09
+            li.page-item
+              a.page-link aria-label="Next" href="#" 
+                span aria-hidden="true" 
+                  span.lnr.lnr-chevron-right
+      .col-lg-4.sidebar-widgets
+        .widget-wrap
+          .single-sidebar-widget.search-widget
+            form.search-form action="#" 
+              input name="search" onblur=("this.placeholder = 'Search Posts'") onfocus=("this.placeholder = ''") placeholder=("Search Posts") type="text" /
+              button type="submit" 
+                i.fa.fa-search
+          .single-sidebar-widget.user-info-widget
+            img alt="" src="img/blog/user-info.png" /
+            a href="#" 
+            h4 Charlie Barber
+            p
+              | Senior blog writer
+            ul.social-links
+              li
+                a href="#" 
+                  i.fa.fa-facebook
+              li
+                a href="#" 
+                  i.fa.fa-twitter
+              li
+                a href="#" 
+                  i.fa.fa-github
+              li
+                a href="#" 
+                  i.fa.fa-behance
+            p
+              | Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend
+              | money on boot
+              | camp when you can get. Boot camps have itssuppor ters andits detractors.
+          .single-sidebar-widget.popular-post-widget
+            h4.popular-title Popular Posts
+            .popular-post-list
+              .single-post-list.d-flex.flex-row.align-items-center
+                .thumb
+                  img.img-fluid alt="" src="img/blog/pp1.jpg" /
+                .details
+                  a href="blog-single.html" 
+                  h6 Space The Final Frontier
+                  p 02 Hours ago
+              .single-post-list.d-flex.flex-row.align-items-center
+                .thumb
+                  img.img-fluid alt="" src="img/blog/pp2.jpg" /
+                .details
+                  a href="blog-single.html" 
+                  h6 The Amazing Hubble
+                  p 02 Hours ago
+              .single-post-list.d-flex.flex-row.align-items-center
+                .thumb
+                  img.img-fluid alt="" src="img/blog/pp3.jpg" /
+                .details
+                  a href="blog-single.html" 
+                  h6 Astronomy Or Astrology
+                  p 02 Hours ago
+              .single-post-list.d-flex.flex-row.align-items-center
+                .thumb
+                  img.img-fluid alt="" src="img/blog/pp4.jpg" /
+                .details
+                  a href="s" 
+                  h6 Asteroids telescope
+                  p 02 Hours ago

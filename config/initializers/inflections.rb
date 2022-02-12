@@ -17,4 +17,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
     inflect.irregular('LessonDoubtComment', 'LessonDoubtComments')
     inflect.irregular('lesson_doubt_comment', 'lesson_doubt_comments')
+    inflect.irregular('category', 'categories')
 end
