@@ -20,32 +20,11 @@ html
               li
                 a href="index.html"  Home
               li
-                a href="about.html"  About
+                a href="about.html"  Sobre
               li
-                a href="courses.html"  Courses
-              /! Dropdown
-              li.dropdown
-                a.dropdown-toggle data-toggle="dropdown" href="#" 
-                  | Pages
-                .dropdown-menu
-                  a.dropdown-item href="elements.html"  Elements
-                  a.dropdown-item href="course-details.html"  Course Details
-              li.dropdown
-                a.dropdown-toggle data-toggle="dropdown" href="#" 
-                  | Blog
-                .dropdown-menu
-                  a.dropdown-item href="blog-home.html"  Blog Home
-                  a.dropdown-item href="blog-single.html"  Blog Details
+                a href="courses.html"  Cursos
               li
-                a href="contacts.html"  Contacts
-              - if user_signed_in?
-                li
-                  = link_to "Sign Out", destroy_user_session_path, method: :delete
-                li 
-                  a href="contacts.html" Profile
-              - else
-                li
-                  = link_to 'Sign In', new_user_session_path()
+                a href="contacts.html"  Contato
       #search-input-box.search-input
         .container
           form.d-flex.justify-content-between
@@ -58,32 +37,32 @@ html
       .container
         .row.justify-content-around
           .col-lg-2.col-md-6.single-footer-widget
-            h4 About Us
+            h4 Sobre mim
             ul
               li
-                a href="#"  Who we are
+                a href="#"  Quem eu sou?
               li
-                a href="#"  About the idea
+                a href="#"  Sobre a ideia
 
               li 
-                a href='#'   Terms of Service
+                a href='#'   Termos de Serviço
           .col-lg-2.col-md-6.single-footer-widget
-            h4 About Ruby
+            h4 Sobre Ruby
             ul
               li
-                a href="#"  Why Ruby?
+                a href="#"  Porquê ruby?
               li
-                a href="#"  Why Rails?
+                a href="#"  Porquê Rails?
               li 
-                a href='#'  Application Examples
+                a href='#'  Exemplos de aplicações
 
         .footer-bottom.row.align-items-center
           p.footer-text.m-0.col-lg-8.col-md-12
             /! Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
             | Copyright &copy;
-            | All rights reserved to João Victor Saraiva | This template is made with      
+            |  Todos direitos reservados a João Victor Saraiva | Este Template foi feito      
             i.fa.fa-heart-o aria-hidden="true" 
-            |   by 
+            |   pela
             a href="https://colorlib.com" target="_blank"  Colorlib
             /! Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
           .col-lg-4.col-md-12.footer-social
