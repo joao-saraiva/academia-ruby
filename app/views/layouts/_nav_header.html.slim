@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-light
+  .container
+    a.navbar-brand href="index.html" style='color: white'
+      | Academia Ruby
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
+      span.lnr.lnr-menu
+    #navbarSupportedContent.collapse.navbar-collapse.justify-content-end.align-items-center
+      ul.navbar-nav
+        li
+          a href="index.html"  Home
+        li
+          = link_to 'Sobre', about_path()
+        li
+          a href="courses.html"  Cursos
+        li
+          a href="contacts.html"  Contato
