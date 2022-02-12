@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[ show edit update destroy ]
-
+  layout :resolve_layout
   # GET /lessons or /lessons.json
   def index
     @lessons = Lesson.all
@@ -67,4 +67,8 @@ class LessonsController < ApplicationController
     def lesson_params
       params.require(:lesson).permit(:name, :content)
     end
+
+    def resolve_layout
+      'other_pages_layout'
+  end
 end

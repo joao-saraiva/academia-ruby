@@ -7,13 +7,15 @@ class HomeController < ApplicationController
         #format.html { render :about, layout: 'other_pages_layout'}
     end
 
-    private
+    def courses
+    end
 
+    private
     def resolve_layout
         case action_name
         when 'index'
             'application'
-        else 'about'
+        else
             'other_pages_layout'
         end
     end
