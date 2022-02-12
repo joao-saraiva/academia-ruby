@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     root to: "home#index"
   end
 
+  get 'about', to: 'home#about', as: 'about'
+
   get '/lesson_doubts/create_doubt_by_lesson/:lesson_id', to: 'lesson_doubts#new', as: 'new_doubt_by_lesson'
   post 'lesson_doubt_comments/post_comment/', to: 'lesson_doubts#post_comment', as: 'post_comment'
 

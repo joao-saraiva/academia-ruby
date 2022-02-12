@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    title
+      | AcademiaRuby
+    meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application'
+
+  body
+    header.default-header
+      nav.navbar.navbar-expand-lg.navbar-light
+        .container
+          a.navbar-brand href="index.html" style='color: white'
+            | Academia Ruby
+          button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
+            span.lnr.lnr-menu
+          #navbarSupportedContent.collapse.navbar-collapse.justify-content-end.align-items-center
+            ul.navbar-nav
+              li
+                = link_to 'Home', root_path()
+              li
+                = link_to 'Sobre', about_path()
+              li
+                a href="courses.html"  Cursos
+              li
+                a href="contacts.html"  Contato
+
+
+    section.banner-area
+      .container
+        .row.justify-content-center.align-items-center
+          .col-lg-12.banner-right
+
+    = yield
+
+    footer.footer-area.section-gap style='margin-top :150px'
+      .container
+        .row.justify-content-around
+          .col-lg-2.col-md-6.single-footer-widget
+            h4 Sobre mim
+            ul
+              li
+                a href="#"  Quem eu sou?
+              li
+                a href="#"  Sobre a ideia
+
+              li 
+                a href='#'   Termos de Serviço
+          .col-lg-2.col-md-6.single-footer-widget
+            h4 Sobre Ruby
+            ul
+              li
+                a href="#"  Porquê ruby?
+              li
+                a href="#"  Porquê Rails?
+              li 
+                a href='#'  Exemplos de aplicações
+
+        .footer-bottom.row.align-items-center
+          p.footer-text.m-0.col-lg-8.col-md-12
+            /! Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+            | Copyright &copy;
+            |  Todos direitos reservados a João Victor Saraiva | Este Template foi feito      
+            i.fa.fa-heart-o aria-hidden="true" 
+            |   pela
+            a href="https://colorlib.com" target="_blank"  Colorlib
+            /! Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+          .col-lg-4.col-md-12.footer-social
+            a href="#" 
+              i.fa.fa-instagram
+            a href="#" 
+              i.fa.fa-github
+
+
