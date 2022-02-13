@@ -38,24 +38,7 @@ section.post-content-area style='margin-top: 150px'
             a.view-more-btn href="blog-single.html"  View More
         nav.blog-pagination.justify-content-center.d-flex
           ul.pagination
-            li.page-item
-              a.page-link aria-label="Previous" href="#" 
-                span aria-hidden="true" 
-                  span.lnr.lnr-chevron-left
-            li.page-item
-              a.page-link href="#"  01
-            li.page-item.active
-              a.page-link href="#"  02
-            li.page-item
-              a.page-link href="#"  03
-            li.page-item
-              a.page-link href="#"  04
-            li.page-item
-              a.page-link href="#"  09
-            li.page-item
-              a.page-link aria-label="Next" href="#" 
-                span aria-hidden="true" 
-                  span.lnr.lnr-chevron-right
+            = paginate @lessons
       .col-lg-4.sidebar-widgets
         .widget-wrap
           .single-sidebar-widget.search-widget
