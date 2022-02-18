@@ -2,60 +2,34 @@ section.post-content-area style='margin-top: 150px'
   .container
     .row
       .col-lg-8.posts-list
-        .single-post.row
-          .col-lg-3.col-md-3.meta-details
-            ul.tags
-              li
-                a href="#"  Food,
-              li
-                a href="#"  Technology,
-              li
-                a href="#"  Politics,
-              li
-                a href="#"  Lifestyle
-            .user-details.row
-              p.user-name.col-lg-12.col-md-12.col-6
-                a href="#"  Mark wiens
-                span.lnr.lnr-user
-              p.date.col-lg-12.col-md-12.col-6
-                a href="#"  12 Dec, 2017
-                span.lnr.lnr-calendar-full
-              p.view.col-lg-12.col-md-12.col-6
-                a href="#"  1.2M Views
-                span.lnr.lnr-eye
-              p.comments.col-lg-12.col-md-12.col-6
-                a href="#"  06 Comments
-                span.lnr.lnr-bubble
-          .col-lg-9.col-md-9
-            .feature-img
-              img.img-fluid alt="" src="img/blog/feature-img1.jpg" /
-            a.posts-title href="blog-single.html" 
-            h3 Astronomy Binoculars A Great Alternative
-            p.excert
-              | MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to
-              | spend money
-              | on boot camp when you can get the MCSE study materials yourself at a fraction.
-            a.view-more-btn href="blog-single.html"  View More
+        - @lessons.each do |lesson|
+          .single-post.row
+            .col-lg-3.col-md-3.meta-details
+              ul.tags style='margin-bottom: 16px;'
+                li
+                  a = lesson.try(:category).upcase
+              .user-details.row
+                p.user-name.col-lg-12.col-md-12.col-6
+                  a João Victor Saraiva
+                  span.lnr.lnr-user
+                p.date.col-lg-12.col-md-12.col-6
+                  a = brazilian_date(lesson.created_at)
+                  span.lnr.lnr-calendar-full
+                p.view.col-lg-12.col-md-12.col-6
+                  a = lesson.formatted_views_text
+                  span.lnr.lnr-eye
+            .col-lg-9.col-md-9
+              .feature-img style='margin-bottom: 15px'
+                - if lesson.javascript?
+                  img.img-fluid alt="" src="img/java_script_wallpaper.jpg"
+                -elsif lesson.ruby? 
+                  img.img-fluid alt="" src="img/ruby-on-rails.png"
+              a.posts-title 
+                h3 = lesson.name
+              = link_to 'Veja Mais', lessons_path(), class: 'view-more-btn'
         nav.blog-pagination.justify-content-center.d-flex
           ul.pagination
-            li.page-item
-              a.page-link aria-label="Previous" href="#" 
-                span aria-hidden="true" 
-                  span.lnr.lnr-chevron-left
-            li.page-item
-              a.page-link href="#"  01
-            li.page-item.active
-              a.page-link href="#"  02
-            li.page-item
-              a.page-link href="#"  03
-            li.page-item
-              a.page-link href="#"  04
-            li.page-item
-              a.page-link href="#"  09
-            li.page-item
-              a.page-link aria-label="Next" href="#" 
-                span aria-hidden="true" 
-                  span.lnr.lnr-chevron-right
+            = paginate @lessons
       .col-lg-4.sidebar-widgets
         .widget-wrap
           .single-sidebar-widget.search-widget
