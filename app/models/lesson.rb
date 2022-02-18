@@ -17,4 +17,14 @@ class Lesson < ApplicationRecord
     self.views = self.views.to_f + 1
     self.save!
   end
+
+  def formatted_views_text
+    if self.views.to_i < 1000
+      return self.views.to_i.to_s[0]
+    elsif self.views.to_i >= 1000 && self.views.to_i <= 9999
+      return "#{self.views.to_i.to_s[0]}#{self.views.to_i.to_s[1]} K"
+    elsif self.views.to_i >= 10000 && self.views.to_i < 99999
+      return "#{self.views.to_i.to_s[0]} K"
+    end
+  end
 end
