@@ -1,0 +1,2 @@
+class LessonModel < ApplicationRecord
+end

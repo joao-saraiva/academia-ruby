@@ -8,6 +8,8 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1 or /lessons/1.json
   def show
+    @lesson_previous = Lesson.find_by(number_order: @lesson.number_order - 1)
+    @lesson_next = Lesson.find_by(number_order: @lesson.number_order + 1)
   end
 
   # GET /lessons/new

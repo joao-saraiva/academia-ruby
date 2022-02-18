@@ -1,13 +1,69 @@
-p#notice = notice
+section.post-content-area.single-post-area
+  .container
+    .row
+      .col-lg-8.posts-list
+        .single-post.row
+          .col-lg-3.col-md-3.meta-details
+            ul.tags style='margin-bottom: 16px;'
+              li
+              a = @lesson.category.upcase
+            .user-details.row
+              p.user-name.col-lg-12.col-md-12.col-6
+                a João Victor Saraiva
+                span.lnr.lnr-user
+              p.date.col-lg-12.col-md-12.col-6
+                a = brazilian_date(@lesson.created_at)
+                span.lnr.lnr-calendar-full
+              p.view.col-lg-12.col-md-12.col-6
+                a = @lesson.formatted_views_text
+                span.lnr.lnr-eye
+          .col-lg-9.col-md-9
+            h3.mt-20.mb-20 = @lesson.name
+            - @lesson.lesson_contents.each do |lesson_content|
+              h4.mt-20.mb-20 = lesson_content.name
+              p.excert = lesson_content.content.html_safe
+        .navigation-area
+          .row
+            .col-lg-6.col-md-6.col-12.nav-left.flex-row.d-flex.justify-content-start.align-items-center
+              .thumb
+              .arrow
+                a href="#" 
+                  span.lnr.text-white.lnr-arrow-left
+              .detials
+                -if @lesson_previous.present?
+                  = link_to lesson_path(@lesson_previous) do
+                    p Aula Anterior
+                    h4 = @lesson_previous.name
+            .col-lg-6.col-md-6.col-12.nav-right.flex-row.d-flex.justify-content-end.align-items-center
+              .detials
+                - if @lesson_next.present?
+                  = link_to lesson_path(@lesson_next)
+                    p Próxima Aula
+                    h4 = @lesson.name
+              .arrow
+                a href="#" 
+                  span.lnr.text-white.lnr-arrow-right
+      .col-lg-4.sidebar-widgets
+        .widget-wrap
+          .single-sidebar-widget.user-info-widget
+            img alt="" src="img/blog/user-info.png" /
+            a  /
+            h4 João Victor Saraiva
+            p
+              | Owner
+            ul.social-links.align-center
+              li
+                a 
+                  i.fa.fa-twitter
+              li
+                a 
+                  i.fa.fa-github
+              li
+                a
+                  i.fa.fa-instagram
+              li
+                a
+                  i.fa.fa-facebook
 
-p
-  strong Name:
-  = @lesson.name
 
-p
-  strong Content:
-  = @lesson.content_formated_to_html
 
-=< link_to 'Back', lessons_path()
-=< link_to 'List of Doubts', lesson_doubts_path()
-=< link_to 'New Doubt', new_doubt_by_lesson_path(@lesson)
