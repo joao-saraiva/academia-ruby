@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
   def show
     @lesson_previous = Lesson.find_by(number_order: @lesson.number_order - 1)
     @lesson_next = Lesson.find_by(number_order: @lesson.number_order + 1)
+    @lesson.update_attribute(:views, @lesson.views.to_i + 1)
   end
 
   # GET /lessons/new
