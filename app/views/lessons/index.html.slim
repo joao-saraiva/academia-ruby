@@ -33,33 +33,31 @@ section.post-content-area style='margin-top: 150px'
       .col-lg-4.sidebar-widgets
         .widget-wrap
           .single-sidebar-widget.search-widget
-            form.search-form action="#" 
-              input name="search" onblur=("this.placeholder = 'Search Posts'") onfocus=("this.placeholder = ''") placeholder=("Search Posts") type="text" /
-              button type="submit" 
-                i.fa.fa-search
-          .single-sidebar-widget.user-info-widget
-            img alt="" src="img/blog/user-info.png" /
-            a href="#" 
-            h4 Charlie Barber
-            p
-              | Senior blog writer
-            ul.social-links
-              li
-                a href="#" 
-                  i.fa.fa-facebook
-              li
-                a href="#" 
-                  i.fa.fa-twitter
-              li
-                a href="#" 
-                  i.fa.fa-github
-              li
-                a href="#" 
-                  i.fa.fa-behance
-            p
-              | Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend
-              | money on boot
-              | camp when you can get. Boot camps have itssuppor ters andits detractors.
+            = search_form_for @q do |f|
+              = f.hidden_field :category_eq, id: 'category_field', value: @q.category_eq
+              = f.label :category_eq, 'Filtrar por Categoria'
+              .row 
+                .col-md-12
+                  .default-select#default-select
+                    .nice-select style='width: 100%'
+                      span.current
+                        - if @q.category_eq == 0
+                          | Ruby
+                        - elsif @q.category_eq == 1
+                          | Html
+                        - elsif @q.category_eq == 2
+                          | Css
+                        - elsif @q.category_eq == 3
+                          | Javascript
+                        - else
+                          | Selecione
+                      ul.list
+                        - Lesson.categories.each do |key,value|
+                          li.option data_value='#{value}' = key.titleize
+              .row style='margin-top: 30px'
+                .col-md-12
+                  .button-group-area 
+                    = f.submit 'PESQUISAR', class: 'genric-btn primary circle'
           .single-sidebar-widget.popular-post-widget
             h4.popular-title Popular Posts
             .popular-post-list
@@ -91,3 +89,11 @@ section.post-content-area style='margin-top: 150px'
                   a href="s" 
                   h6 Asteroids telescope
                   p 02 Hours ago
+
+javascript:
+  $(document).ready(function(){
+    $('.option').on('click',function(){
+        console.log($(this).attr('data_value'))
+        $('#category_field').val( $(this).attr('data_value')  )
+    })
+  })

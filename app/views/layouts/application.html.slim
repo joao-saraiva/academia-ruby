@@ -7,6 +7,8 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+
   body
     header.default-header
       nav.navbar.navbar-expand-lg.navbar-light
@@ -70,5 +72,3 @@ html
               i.fa.fa-instagram
             a href="#" 
               i.fa.fa-github
-
-    = javascript_include_tag 'application'
