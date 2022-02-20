@@ -3,7 +3,9 @@ class LessonsController < ApplicationController
   layout :resolve_layout
   # GET /lessons or /lessons.json
   def index
-    @lessons =  Lesson.order(category: :asc, number_order: :asc).page(params[:page]).per(1)
+    @q = Lesson.ransack(params[:q])
+    @lessons = @q.result(distinct: true)
+    @lessons =  @lessons.order(category: :asc, number_order: :asc).page(params[:page]).per(1)
   end
 
   # GET /lessons/1 or /lessons/1.json
