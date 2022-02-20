@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
   layout :resolve_layout
   # GET /lessons or /lessons.json
   def index
-    @lessons =  Lesson.page(params[:page]).per(1)
+    @lessons =  Lesson.order(category: :asc, number_order: :asc).page(params[:page]).per(1)
   end
 
   # GET /lessons/1 or /lessons/1.json
